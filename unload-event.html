@@ -15,7 +15,7 @@ var observer = new MutationObserver(function(mutations) {
   });    
 });
 
-observer.observe(document.querySelector('#target'), { attributes: true, childList: true, characterData: true });
+observer.observe(document.querySelector('html'), { attributes: true, childList: true, characterData: true });
 </script>
 </body>
 </html>
