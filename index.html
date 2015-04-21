@@ -2,7 +2,10 @@
 <body>
 <script>
 window.addEventListener("beforeunload", function (event) {
-  console.log("wei here");
+  console.log("beforeunload fired");
+});
+window.addEventListener("unload", function (event) {
+  console.log("unload fired");
 });
 </script>
 </body>
