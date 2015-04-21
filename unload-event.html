@@ -1,5 +1,6 @@
 <html>
 <body>
+  <div id="target"></div>
 <script>
 window.addEventListener("beforeunload", function (event) {
   console.log("beforeunload fired");
@@ -7,6 +8,14 @@ window.addEventListener("beforeunload", function (event) {
 window.addEventListener("unload", function (event) {
   console.log("unload fired");
 });
+
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    console.log(mutation);
+  });    
+});
+
+observer.observe(document.querySelector('#target'), { attributes: true, childList: true, characterData: true });
 </script>
 </body>
 </html>
